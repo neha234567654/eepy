@@ -1,0 +1,896 @@
+/*credit to wikipedia and kenhub - all pictures from wikipedia and kenhub and harry potter and newsweek
+*/
+
+function start(){
+    startScreen();
+}
+
+function backcolor()
+{
+    var colback = new Rectangle(getWidth(),getHeight());
+    colback.setColor("#EAFAFF");
+    add(colback);
+}
+
+function backbutton()
+{
+    back.setPosition(getWidth()-60, getHeight()-35);
+    back.setColor(Color.BLACK);
+    add(back);
+    backtxt.setPosition(getWidth()-55, getHeight()-20);
+    backtxt.setColor(Color.WHITE);
+    add(backtxt);
+}
+
+function nextButton()
+{
+    next.setPosition(getWidth()-120, getHeight()-35);
+    next.setColor(Color.BLACK);
+    add(next);
+    nextxt.setPosition(getWidth()-110, getHeight()-20);
+    nextxt.setColor(Color.WHITE);
+    add(nextxt);
+}
+
+var back = new Rectangle(50,20);
+var backtxt = new Text("LEABe", "8pt ChalkDuster");
+var next = new Rectangle(50,20);
+var nextxt = new Text("Next", "8pt ChalkDuster");
+var what = new Rectangle(210,70);
+var what2 = new Rectangle(200,60);
+var whatxt = new Text("What?", "20pt ChalkDuster");
+var learn = new Rectangle(210,70);
+var learn2 = new Rectangle(200,60);
+var learntxt = new Text("Learn", "20pt Chalkduster");
+var test = new Rectangle(210,70);
+var test2 = new Rectangle(200,60);
+var testxt = new Text("Test", "20pt Chalkduster");
+
+function startScreen(){
+    backcolor();
+    
+    var title = new Text("BONES", "30pt Chalkduster");
+    title.setPosition(getWidth()/2-title.getWidth()/2, getHeight()/5);
+    add(title);
+    
+    what.setPosition(getWidth()/2-what.getWidth()/2, 150);
+    add(what);
+    what2.setPosition(getWidth()/2-what2.getWidth()/2,155);
+    what2.setColor("#EAFAFF");
+    add(what2);
+    whatxt.setPosition(getWidth()/2-whatxt.getWidth()/2,185+10);
+    add(whatxt);
+    
+    
+    learn.setPosition(getWidth()/2-what.getWidth()/2, 265);
+    add(learn);
+    learn2.setPosition(getWidth()/2-what2.getWidth()/2,270);
+    learn2.setColor("#EAFAFF");
+    add(learn2);
+    learntxt.setPosition(getWidth()/2-learntxt.getWidth()/2,310);
+    add(learntxt);
+    
+    
+    test.setPosition(getWidth()/2-what.getWidth()/2, 360);
+    add(test);
+    test2.setPosition(getWidth()/2-what2.getWidth()/2,365);
+    test2.setColor("#EAFAFF");
+    add(test2);
+    testxt.setPosition(getWidth()/2-testxt.getWidth()/2,405);
+    add(testxt);
+    
+    mouseClickMethod(startGame);
+}
+
+function startGame(e) {
+    var elem = getElementAt(e.getX(), e.getY());
+
+    if ((elem != null) && ((elem == what2)) || (elem == whatxt)) {
+        removeAll();
+        whatPage();
+    }
+    if((elem != null) && ((elem == learn2)) || (elem == learntxt)){
+        removeAll();
+        learnPage();
+    }
+    if((elem != null) && ((elem == test2)) || (elem == testxt)){
+        removeAll();
+        testPage();
+    }
+}
+
+function backtoStart(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+        removeAll();
+        startScreen();
+        mouseClickMethod(startGame);
+    }
+}
+
+function whatPage(){
+    backcolor();
+    
+    var title4 = new Text("What?", "30pt Chalkduster");
+    title4.setPosition(getWidth()/2-title4.getWidth()/2, getHeight()/7);
+    add(title4);
+    
+    var life = new Text("When i was weawy weawy wittle ", "15pt ChalkDuster");
+    life.setPosition(15,130);
+    add(life);
+    var life2 = new Text("i woke up and this morning i", "15pt ChalkDuster");
+    life2.setPosition(15, 155);
+    add(life2);
+    var life3 = new Text("woke up today in this morning", "15pt ChalkDuster");
+    life3.setPosition(15, 180);
+    add(life3);
+    var life4 = new Text("in the morning i woke up this", "15pt ChalkDuster")
+    life4.setPosition(15, 205);
+    add(life4);
+    var life5 = new Text("morning, i woke up and", "15pt ChalkDuster");
+    life5.setPosition(15, 230);
+    add(life5);
+    var life6 = new Text("remebemer that i wake up, ", "15pt ChalkDuster");
+    life6.setPosition(15, 255);
+    add(life6);
+    var life7 = new Text("i woke, i woke up that. :(", "15pt ChalkDuster");
+    life7.setPosition(15, 280);
+    add(life7);
+    
+    backbutton();
+    mouseClickMethod(backtoStart);
+}
+
+var howTo = new Rectangle(210,60);
+var howTo2 = new Rectangle(200,50);
+var howTotxt = new Text("How to", "17pt ChalkDuster");
+var arms = new Rectangle(210,60);
+var arms2 = new Rectangle(200,50);
+var armstxt = new Text("Arms", "17pt Chalkduster");
+var legs = new Rectangle(210,60);
+var legs2 = new Rectangle(200,50);
+var legstxt = new Text("Legs", "17pt Chalkduster");
+var torso = new Rectangle(210,60);
+var torso2 = new Rectangle(200,50);
+var torsotxt = new Text("Torso", "17pt Chalkduster");
+var head = new Rectangle(210,60);
+var head2 = new Rectangle(200,50);
+var headtxt = new Text("Head", "17pt Chalkduster");
+var answerBox = new Rectangle(200,60);
+var answerBoxTxt = new Text("Answer", "25pt Chalkboard");
+
+function buttonPage(){
+    howTo.setPosition(getWidth()/2-what.getWidth()/2, 100);
+    add(howTo);
+    howTo2.setPosition(getWidth()/2-what2.getWidth()/2,105);
+    howTo2.setColor("#EAFAFF");
+    add(howTo2);
+    howTotxt.setPosition(getWidth()/2-whatxt.getWidth()/2,140);
+    add(howTotxt);
+    
+    arms.setPosition(getWidth()/2-what.getWidth()/2, 185);
+    add(arms);
+    arms2.setPosition(getWidth()/2-what2.getWidth()/2,190);
+    arms2.setColor("#EAFAFF");
+    add(arms2);
+    armstxt.setPosition(getWidth()/2-armstxt.getWidth()/2,225);
+    add(armstxt);
+    
+    legs.setPosition(getWidth()/2-legs.getWidth()/2, 250);
+    add(legs);
+    legs2.setPosition(getWidth()/2-legs2.getWidth()/2,255);
+    legs2.setColor("#EAFAFF");
+    add(legs2);
+    legstxt.setPosition(getWidth()/2-legstxt.getWidth()/2,290);
+    add(legstxt);
+    
+    torso.setPosition(getWidth()/2-torso.getWidth()/2, 315);
+    add(torso);
+    torso2.setPosition(getWidth()/2-torso2.getWidth()/2,320);
+    torso2.setColor("#EAFAFF");
+    add(torso2);
+    torsotxt.setPosition(getWidth()/2-torsotxt.getWidth()/2,355);
+    add(torsotxt);
+    
+    head.setPosition(getWidth()/2-head.getWidth()/2, 380);
+    add(head);
+    head2.setPosition(getWidth()/2-head2.getWidth()/2,385);
+    head2.setColor("#EAFAFF");
+    add(head2);
+    headtxt.setPosition(getWidth()/2-headtxt.getWidth()/2,420);
+    add(headtxt);
+}
+
+function learnPage(){
+    backcolor();
+    
+    var title2 = new Text("Learn", "30pt Chalkduster");
+    title2.setPosition(getWidth()/2-title2.getWidth()/2, getHeight()/7);
+    add(title2);
+    
+    buttonPage();
+    mouseClickMethod(startLearn);
+    backbutton();
+    
+}
+
+function testPage(){
+    backcolor();
+    
+    var title3 = new Text("Test", "30pt Chalkduster");
+    title3.setPosition(getWidth()/2-title3.getWidth()/2, getHeight()/7);
+    add(title3);
+    
+    backbutton();
+    buttonPage();
+    mouseClickMethod(startTest);
+}
+
+function startLearn(e) {
+    var elem3 = getElementAt(e.getX(), e.getY());
+
+    if ((elem3 != null) && ((elem3 == howTo2)) || (elem3 == howTotxt)) {
+        removeAll();
+        backcolor();
+        learnHow();
+    }
+    if((elem3 != null) && ((elem3 == arms2)) || (elem3 == armstxt)){
+        removeAll();
+        backcolor();
+        learnArms();
+    }
+    if((elem3 != null) && ((elem3 == legs2)) || (elem3 == legstxt)){
+        removeAll();
+        backcolor();
+        learnLegs();
+    }
+    if((elem3 != null) && ((elem3 == torso2)) || (elem3 == torsotxt)){
+        removeAll();
+        backcolor();
+        learnTorso();
+    }
+    if((elem3 != null) && ((elem3 == head2)) || (elem3 == headtxt)){
+        removeAll();
+        backcolor();
+        learnHead();
+    }
+    if ((elem3 != null) && ((elem3 == back)) || (elem3 == backtxt)) {
+        removeAll();
+        backcolor();
+        startScreen();
+    }
+}
+
+function learnHow()
+{
+    var learnTitle = new Text("Instructions", "30pt ChalkDuster")
+    learnTitle.setPosition(getWidth()/2-learnTitle.getWidth()/2, getHeight()/5);
+    add(learnTitle);
+    var life = new Text("1) Click on the section of body ", "15pt ChalkDuster");
+    life.setPosition(15,140);
+    add(life);
+    var life2 = new Text("2) Click on the bone you want", "15pt ChalkDuster");
+    life2.setPosition(15, 165);
+    add(life2);
+    var life3 = new Text("3) Start learning you loser", "15pt ChalkDuster");
+    life3.setPosition(15, 390);
+    add(life3);
+    var sai2l = new WebImage("https://images.ctfassets.net/usf1vwtuqyxm/DxKfqdm0vlM656PFLOrcv/17bc8ff3180ce8c430354fb143043cee/Dobby_2_1800x1248.png");
+    sai2l.setSize(190,150);
+    sai2l.setPosition(getWidth()/2-sai2l.getWidth()/2, 200);
+    add(sai2l);
+    
+    backbutton();
+    mouseClickMethod(backlearnhow);
+
+}
+
+function backlearnhow(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    for(var i = 0; i < 17; i++){
+        if ((elem != null) && (elem == back) || (elem == backtxt)){
+            removeAll();
+            backcolor();
+            learnPage();
+        }
+    }
+}
+
+var clavicles = new Text("Clavicles", "15pt ChalkDuster");
+var scapula = new Text("Scapula", "15pt ChalkDuster");
+var humerus = new Text("Humerus", "15pt ChalkDuster");
+var radius = new Text("Radius", "15pt ChalkDuster");
+var ulna = new Text("Ulna", "15pt ChalkDuster");
+var scaphoid = new Text("Scaphoid", "15pt ChalkDuster");
+var lunate = new Text("Lunate", "15pt ChalkDuster");
+var triquetrum = new Text("Triquetrum", "15pt ChalkDuster");
+var pisiform = new Text("Pisiform", "15pt ChalkDuster");
+var trapezium = new Text("Trapezium", "15pt ChalkDuster");
+var trapezoid = new Text("Trapezoid", "15pt ChalkDuster");
+var capitate = new Text("Capitate", "15pt ChalkDuster");
+var hamate = new Text("Hamate", "15pt ChalkDuster");
+var metacarpal = new Text("Metacarpal", "15pt ChalkDuster");
+var proximalphalanges = new Text("Proximal Phalanges", "15pt ChalkDuster");
+var intermediatephalanges = new Text("Intermediate Phalanges", "15pt ChalkDuster");
+var distalphalanges = new Text("Distal Phalanges", "15pt ChalkDuster");
+var armBoneArr2 = [clavicles, scapula, humerus, radius, ulna, scaphoid, lunate, triquetrum, pisiform, trapezium, trapezoid, capitate, hamate, metacarpal, proximalphalanges, intermediatephalanges, distalphalanges];
+
+function learnArms()
+{
+    for(var i = 0; i < 17; i++)
+    {
+        armBoneArr2[i].setPosition(20, 30+27*i);
+    }
+    for(var i = 0; i < 17; i++)
+    {
+        add(armBoneArr2[i]);
+    }
+    
+    backbutton();
+    mouseClickMethod(clickarmlearn);
+}
+
+function clickarmlearn(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    for(var i = 0; i < 17; i++){
+        if ((elem != null) && (elem == armBoneArr2[i])){
+            removeAll();
+            backcolor();
+            displayit(i, armBoneArr, armBonesDef, armBones, learnArms);
+        }
+    }
+    
+    if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+        removeAll();
+        backcolor();
+        learnPage();
+    }
+}
+
+
+
+var armBonesDef = new Map([
+        ["clavicles", "two slender, S-shapes bones that connect*the sternum to the scapulae' they support the upper*limbs, allow for a wide range of arm movements,*and protect the neurovascular structures of the neck"],
+        ["scapula", "a bone on the back of the thorax that*provides attachment points for muscles, allows for*a wide range of shoulder movements, and protects the*neurovascular structures of the shoulder."],
+        ["humerus", "the long bone*in the upper arm that*allows for movement*and protects the neurovascular structures"],
+        ["radius", "one of the two bones in the forearm*that supports the forearm and hand,*allows for rotation of the forearm,*and provides attachment points for muscles"],
+        ["ulna", "one of the two bones in the forearm*that supports the forearm and hand,*provides stability for the elbow joint,*and provides attachment points for muscles"],
+        ["scaphoid", "a bone in the wrist*that supports the wrist,*allows for movement of the wrist,*and provides attachment points for muscles"],
+        ["lunate", "a bone in the center of the wrist*that supports the wrist, allows*for movement of the wrist,*and provides attachment points for muscles"],
+        ["triquetrum", "a bone in the wrist that supports*the wrist, allows for movement*of the wrist, and provides attachment*points for muscles and ligaments"],
+        ["pisiform", "a small bone in the wrist that protects*the tendon of the flexor carpi ulnaris muscle,*provides stability for the wrist, and provides*an attachment point for the abductor digiti minimi muscle"],
+        ["trapezium", "a bone in the wrist that*supports the wrist, allows for movement*of the wrist, and provides attachment*points for muscles that move the thumb."],
+        ["trapezoid", "a bone in the wrist that supports*the wrist, allows for movement of the*wrist, and provides attachment points*for muscles that move the wrist and hand"],
+        ["capitate", "a carpal bone in the wrist that*supports the wrist, allows for movement of the*wrist, and provides attachment points*for muscles that move the wrist, hand, and thumb"],
+        ["hamate", "a bone in the wrist that supports the*wrist, allows for movement of the wrist,*and provides attachment points for muscles that*move the wrist, little finger, and ring finger"],
+        ["metacarpal", "the five long bones in the hand that connect the*wrist bones to the finger bones. They transmit forces*from the hand to the wrist and forearm, support*the hand and fingers, and allow for movement of the fingers"],
+        ["proximal phalanges", "the first bones in the fingers*and toes that transmit*forces, support the fingers and*toes, and allow for movement."],
+        ["intermediate phalanges", "the middle bones of the fingers*and toes that transmit*forces, support the fingers and*toes, and allow for movement"],
+        ["distal phalanges", "the bones at the tips of the fingers*and toes that protect the fingertips*and toenails, allow for fine motor*movements, and provide sensation"],
+          
+    ]);
+    
+var femur = new Text("Femur", "15pt ChalkDuster");
+var patella = new Text("Patella", "15pt ChalkDuster");
+var tibia = new Text("Tibia", "15pt ChalkDuster");
+var fibula = new Text("Fibula", "15pt ChalkDuster");
+var calcaneus = new Text("Calcaneus", "15pt ChalkDuster");
+var talus = new Text("Talus", "15pt ChalkDuster");
+var navicular = new Text("Navicular", "15pt ChalkDuster");
+var cuneiform = new Text("Cuneiform", "15pt ChalkDuster");
+var cuboid = new Text("Cuboid", "15pt ChalkDuster");
+var metatarsal = new Text("Metatarsal", "15pt ChalkDuster");
+var proximalphalanges = new Text("Proximal Phalanges", "15pt ChalkDuster");
+var intermediatephalanges = new Text("Intermediate Phalanges", "15pt ChalkDuster");
+var distalphalanges = new Text("Distal Phalanges", "15pt ChalkDuster");
+var legBonesArr2 = [femur, patella, tibia, fibula, calcaneus, talus, navicular, cuneiform, cuboid, metatarsal, proximalphalanges, intermediatephalanges, distalphalanges];
+function learnLegs()
+{
+    for(var i = 0; i < 13; i++)
+    {
+        legBonesArr2[i].setPosition(20, 30+27*i);
+    }
+    for(var i = 0; i < 13; i++)
+    {
+        add(legBonesArr2[i]);
+    }
+    
+    backbutton();
+    mouseClickMethod(clickleglearn);
+}
+
+function clickleglearn(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    for(var i = 0; i < 13; i++){
+        if ((elem != null) && (elem == legBonesArr2[i])){
+            removeAll();
+            backcolor();
+            displayit(i, legBonesArr, legBonesDef, legBones, learnLegs);
+        }
+    }
+    
+    if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+        removeAll();
+        backcolor();
+        learnPage();
+    }
+}
+    
+var legBonesDef = new Map([
+        ["femur", "the longest and strongest bone in the*human body that supports the weight of*the body, allows for movement of the leg,*and protects the nerves and blood vessels of the leg."],
+        ["patella", "the kneecap, a bone that protects*the knee joint, increases the leverage*of the quadriceps femoris muscle,*and reduces friction in the knee joint."],
+        ["tibia", "the shinbone, a large, strong bone*that supports the weight of the body,*allows for movement of the leg, and protects*the nerves and blood vessels of the leg"],
+        ["fibula", "the calf bone, a smaller, lateral, and*non-weight-bearing bone that provides stability*to the ankle joint, allows for muscle attachment,*and protects the nerves and blood vessels of the leg"],
+        ["calcaneus", "the heel bone, a large bone*that supports the weight of the body,*allows for movement of the foot, and protects*the nerves and blood vessels of the foot"],
+        ["talus", "the anklebone, a small, irregularly shaped*bone that transmits forces from the leg to*the foot, allows for movement of the ankle joint,*and provides stability to the ankle joint."],
+        ["navicular", "a bone in the midfoot that transmits forces*from the talus bone to the cuneiform bones,*allows for movement of the midfoot joint,*and provides stability to the midfoot joint"],
+        ["cuneiform", "three small, wedge-shaped bones in the*midfoot that transmit forces from the midfoot to*the forefoot, provide stability to the midfoot joint,*and allow for movement of the midfoot joints"],
+        ["cuboid", "a bone in the midfoot that transmits forces*from the midfoot to the forefoot, provides*stability to the lateral column of the foot,*and allows for movement of the lateral column of the foot"],
+        ["metatarsal", "five long bones in the midfoot*that support the weight of the body,*allow for movement of the foot,*and provide attachment points for muscles"],
+        ["proximal phalanges", "the first bones in the fingers*and toes that transmit forces,*support the fingers and toes,*and allow for movement"],
+        ["intermediate phalanges", "the middle bones of the fingers*and toes that transmit forces,*support the fingers and toes,*and allow for movement"],
+        ["distal phalanges", "the bones at the tips of the fingers*and toes that protect the fingertips*and toenails, allow for fine motor*movements, and provide sensation"],
+    ]);
+    
+var ilium = new Text("Ilium", "15pt ChalkDuster");
+var ischium = new Text("Ischium", "15pt ChalkDuster");
+var pubis = new Text("Pubis", "15pt ChalkDuster");
+var sacrum = new Text("Sacrum", "15pt ChalkDuster");
+var coccyx = new Text("Coccyx", "15pt ChalkDuster");
+var sternum = new Text("Sternum", "15pt ChalkDuster");
+var ribs = new Text("Ribs", "15pt ChalkDuster");
+var cervicalvertebrae = new Text("Cervical Vertebrae", "15pt ChalkDuster");
+var thoracicvertebrae = new Text("Thoracic Vertebrae", "15pt ChalkDuster");
+var lumbarvertebrae = new Text("Lumbar Vertebrae", "15pt ChalkDuster");
+var torsoBonesArr2 = [ilium, ischium,pubis, sacrum, coccyx, sternum, ribs, cervicalvertebrae, thoracicvertebrae, lumbarvertebrae];
+function learnTorso(){
+    for(var i = 0; i < 10; i++)
+    {
+        torsoBonesArr2[i].setPosition(20, 30+27*i);
+    }
+    for(var i = 0; i < 10; i++)
+    {
+        add(torsoBonesArr2[i]);
+    }
+    
+    backbutton();
+    mouseClickMethod(clicktorsolearn);
+}
+
+function clicktorsolearn(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    for(var i = 0; i < 13; i++){
+        if ((elem != null) && (elem == torsoBonesArr2[i])){
+            removeAll();
+            backcolor();
+            displayit(i, torsoBonesArr, torsoBonesDef, torsoBones, learnTorso);
+        }
+    }
+    
+    if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+        removeAll();
+        backcolor();
+        learnPage();
+    }
+}
+    
+var torsoBonesDef = new Map([
+        ["ilium", "largest bone in the pelvis;*supports the weight of the*body, moves the legs, and protects the*internal organs of the pelvis"],
+        ["ischium", "a bone in the pelvis that helps to support the*weight of the body and allows the leg to move**"],
+        ["pubis", "front part of the hip bone;*helps support the weight*of the body and protects internal*organs of the pelvis"],
+        ["sacrum", "the bone at the base of the spine*that helps with movement and support**"],
+        ["coccyx", "a small bone at the base of the spine*that helps to support the pelvic floor,*protect the nerves and vessels of the pelvic region,*and provide attachment points for muscles"],
+        ["sternum", "a flat bone in the chest that protects*the heart, lungs, and major blood vessels**"],
+        ["ribs", "curved bones in the chest*that protect the internal*organs, helps with breathing,*and support the back and shoulders"],
+        ["cervical vertebrae", "the seven vertebrae in the*neck that support*the head and allow for a*wide range of head motions"],
+        ["thoracic vertebrae", "the twelve vertebrae in the middle*of the spine that support the chest,*protect the spinal cord and nerves,*and allow for movement of the chest"],
+        ["lumbar vertebrae", "the five vertebrae in the lower back that*support the weight of the upper body, transmit forces*of the pelvis and legs, protect the spinal cord*and nerves, and allow for movement of the lower back"],
+        
+    ])
+
+var frontal = new Text("Frontal", "15pt ChalkDuster");
+var parietal = new Text("Parietal", "15pt ChalkDuster");
+var temporal = new Text("Temporal", "15pt ChalkDuster");
+var occipital = new Text("Occipital", "15pt ChalkDuster");
+var sphenoid = new Text("Sphenoid", "15pt ChalkDuster");
+var nasal = new Text("Nasal", "15pt ChalkDuster");
+var maxilla = new Text("Maxilla", "15pt ChalkDuster");
+var zygomatic = new Text("Zygomatic", "15pt ChalkDuster");
+var palatine = new Text("Palatine", "15pt ChalkDuster");
+var lacrimal = new Text("Lacrimal", "15pt ChalkDuster");
+var inferiornasalconchae = new Text("Inferior Nasal Conchae", "15pt ChalkDuster");
+var vomer = new Text("Vomer", "15pt ChalkDuster");
+var mandible = new Text("Mandible", "15pt ChalkDuster");
+var hyoid = new Text("Hyoid", "15pt ChalkDuster");
+var malleus = new Text("Malleus", "15pt ChalkDuster");
+var incus = new Text("Incus", "15pt ChalkDuster");
+var headBonesArr2 = [frontal, parietal, temporal, occipital, sphenoid, nasal, maxilla, zygomatic, palatine, lacrimal, inferiornasalconchae, vomer, mandible, hyoid, malleus, incus];
+function learnHead(){
+    for(var i = 0; i < 16; i++)
+    {
+        headBonesArr2[i].setPosition(20, 30+27*i);
+    }
+    for(var i = 0; i < 16; i++)
+    {
+        add(headBonesArr2[i]);
+    }
+    
+    backbutton();
+    mouseClickMethod(clickheadlearn);
+}
+
+function clickheadlearn(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    for(var i = 0; i < 16; i++){
+        if ((elem != null) && (elem == headBonesArr2[i])){
+            removeAll();
+            backcolor();
+            displayit(i, headBonesArr, headBonesDef, headBones, learnHead);
+        }
+    }
+    
+    if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+        removeAll();
+        backcolor();
+        learnPage();
+    }
+}
+
+var headBonesDef = new Map([
+        ["frontal", "the bone that forms the forehead and*roofs over most of the orbits and nasal cavity.*It protects the brain, supports the skull, provides attachment*points for muscles, and houses the frontal sinuses"],
+        ["parietal", "the bone that forms the sides*and top of the skull. It protects*the brain, supports the skull, and*provides attachment points for muscles"],
+        ["temporal", "the bone that protects the brain, supports*the skull, houses the organs of hearing and*balance, supports the temporomandibular joint, and*provides passageways for blood vessels and nerves"],
+        ["occipital", "the bone that protects the brain, supports*the skull, provides attachment points for*muscles and ligaments, and houses the foramen magnum*"],
+        ["sphenoid", "the bone that supports the skull,*protects the brain and nerves, houses*the pituitary gland and sella turcica, and*contributes to the formation of the sinuses."],
+        ["nasal", "the bone that forms the bridge of*the nose, protects the nasal cavity,*supports the nose, and allows for airflow.*"],
+        ["maxilla", "the upper jawbone that supports the upper teeth,*provides attachment points for facial muscles, forms the*hard palate, contributes to the formation of the lateral*walls of the nasal cavity, and houses the maxillary sinus."],
+        ["zygomatic", "the cheekbone that supports the soft tissues of*the cheek, provides attachment points for facial*muscles, forms the zygomatic arch, and contributes*to the formation of the lateral wall of the orbit"],
+        ["palatine", "the posterior part of the hard palate,*contributes to the formation of the*lateral wall of the nasal cavity, provides attachment*points for facial muscles, and houses the palatine canals"],
+        ["lacrimal", "the bone in the eye socket that protects*the lacrimal sac and nasolacrimal duct, supports*the medial wall of the orbit, forms the lacrimal fossa, and*contributes to the formation of the nasolacrimal canal"],
+        ["inferior nasal conchae", "extends horizontally along the*lateral wall of the nasal cavity*and consists of a lamina of spongy bone,*curled upon itself like a scroll,"],
+        ["vomer", "a thin bone that forms the inferior part of*the nasal septum and provides support,*attachment for mucous membranes, airflow direction,*and passage for blood vessels and nerves"],
+        ["mandible", "the lower jawbone that supports the lower*teeth, provides attachment points for*facial muscles, protects the soft tissues of*the face, and contributes to the formation of the airway"],
+        ["hyoid", "the bone in the neck that supports*the tongue and larynx, protects the *airway, facilitates swallowing, and provides*attachment points for muscles and ligaments"],
+        ["malleus", "the outermost ossicle in the middle*ear that transmits sound vibrations from*the eardrum to the inner ear, protects the*inner ear, and maintains the stability of the eardrum"],
+        ["incus", "a bone in the middle ear.*The anvil-shaped small bone is one of*three ossicles in the middle ear.*The incus receives vibrations from the malleus"],
+    ])
+    
+function displayit(num, arr, map, map2, func)
+{
+    var title = arr[num];
+    var titletxt = new Text(title, "20pt ChalkDuster");
+    titletxt.setPosition(getWidth()/2-titletxt.getWidth()/2, getHeight()/8);
+    add(titletxt);
+    
+    var im = new WebImage(map2.get(arr[num]));
+    im.setSize(160, 230);
+    im.setPosition(getWidth()/2-im.getWidth()/2, getHeight()/8+30);
+    add(im);
+    
+    var str = map.get(arr[num]);
+    var temp1 = str.substring(0, str.indexOf("*"));
+    str = str.substring(str.indexOf("*")+1);
+    var temp2 = str.substring(0, str.indexOf("*"));
+    str = str.substring(str.indexOf("*")+1);
+    var temp3 = str.substring(0, str.indexOf("*"));
+    str = str.substring(str.indexOf("*")+1);
+    var temp4 = str;
+    var print1 = new Text(temp1, "8pt ChalkDuster");
+    print1.setPosition(getWidth()/2-print1.getWidth()/2, 370);
+    add(print1);
+    var print2 = new Text(temp2, "8pt ChalkDuster");
+    print2.setPosition(getWidth()/2-print2.getWidth()/2, 385);
+    add(print2);
+    var print3 = new Text(temp3, "8pt ChalkDuster");
+    print3.setPosition(getWidth()/2-print3.getWidth()/2, 400);
+    add(print3);
+    var print4 = new Text(temp4, "8pt ChalkDuster");
+    print4.setPosition(getWidth()/2-print4.getWidth()/2, 415);
+    add(print4);
+    
+    function backfrombone(e){
+        var elem = getElementAt(e.getX(), e.getY());
+
+        if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+            removeAll();
+            backcolor();
+            func();
+        }
+    }
+    
+    backbutton();
+    mouseClickMethod(backfrombone);
+}
+
+function startTest(e) {
+    var elem3 = getElementAt(e.getX(), e.getY());
+
+    if ((elem3 != null) && ((elem3 == howTo2)) || (elem3 == howTotxt)) {
+        removeAll();
+        backcolor();
+        testHow();
+    }
+    if((elem3 != null) && ((elem3 == arms2)) || (elem3 == armstxt)){
+        removeAll();
+        backcolor();
+        testArms();
+    }
+    if((elem3 != null) && ((elem3 == legs2)) || (elem3 == legstxt)){
+        removeAll();
+        backcolor();
+        testLegs();
+    }
+    if((elem3 != null) && ((elem3 == torso2)) || (elem3 == torsotxt)){
+        removeAll();
+        backcolor();
+        testTorso();
+    }
+    if((elem3 != null) && ((elem3 == head2)) || (elem3 == headtxt)){
+        removeAll();
+        backcolor();
+        testHead();
+    }
+    if((elem3 != null) && ((elem3 == back)) || (elem3 == backtxt)){
+        removeAll();
+        backcolor();
+        startScreen();
+    }
+}
+
+function testHow()
+{
+    var learnTitle = new Text("Instructions", "30pt ChalkDuster")
+    learnTitle.setPosition(getWidth()/2-learnTitle.getWidth()/2, getHeight()/5);
+    add(learnTitle);
+    var life = new Text("1) Click on the section of body ", "15pt ChalkDuster");
+    life.setPosition(15,140);
+    add(life);
+    var life2 = new Text("2) When shown a picture, guess", "15pt ChalkDuster");
+    life2.setPosition(15, 165);
+    add(life2);
+    var life3 = new Text("what bone it is", "15pt ChalkDuster");
+    life3.setPosition(15, 190);
+    add(life3);
+    var life4 = new Text("3) Click answer to answer", "15pt ChalkDuster");
+    life4.setPosition(15, 215)
+    add(life4);
+    var life5 = new Text("4) Start testing you loser", "15pt ChalkDuster");
+    life5.setPosition(15, 430);
+    add(life5);
+    
+    var sail = new WebImage("https://d.newsweek.com/en/full/1920025/cat-its-mouth-open.jpg?w=1600&h=1600&q=88&f=b7a44663e082b8041129616b6b73328d");
+    sail.setSize(190,150);
+    sail.setPosition(getWidth()/2-sail.getWidth()/2, 255);
+    add(sail);
+    
+    backbutton();
+    mouseClickMethod(backtesthow);
+}
+
+function backtesthow(e){
+    var elem = getElementAt(e.getX(), e.getY());
+    
+    for(var i = 0; i < 17; i++){
+        if ((elem != null) && (elem == back) || (elem == backtxt)){
+            removeAll();
+            backcolor();
+            testPage();
+        }
+    }
+}
+
+var armBones = new Map([
+        ["clavicles", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Clavicle_-_anterior_view.png/500px-Clavicle_-_anterior_view.png"],
+        ["scapula", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Scapula_-_posterior_view2.png/500px-Scapula_-_posterior_view2.png"],
+        ["humerus", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Humerus_-_anterior_view.png/500px-Humerus_-_anterior_view.png"],
+        ["radius", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Radius_-_anterior_view2.png/500px-Radius_-_anterior_view2.png"],
+        ["ulna", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Ulna_-_anterior_view.png/500px-Ulna_-_anterior_view.png"],
+        ["scaphoid", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Scaphoid_bone_%28left_hand%29_01_palmar_view.png/500px-Scaphoid_bone_%28left_hand%29_01_palmar_view.png"],
+        ["lunate", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Lunate_bone_%28left_hand%29_01_palmar_view.png/500px-Lunate_bone_%28left_hand%29_01_palmar_view.png"],
+        ["triquetrum", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Triangular_bone_%28left_hand%29_01_palmar_view.png/500px-Triangular_bone_%28left_hand%29_01_palmar_view.png"],
+        ["pisiform", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Pisiform_bone_%28left_hand%29_01_palmar_view.png/500px-Pisiform_bone_%28left_hand%29_01_palmar_view.png"],
+        ["trapezium", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Trapezium_bone_%28left%2901_palmar_view.png/500px-Trapezium_bone_%28left%2901_palmar_view.png"],
+        ["trapezoid", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Trapezoid_bone_%28left_hand%29_01_palmar_view.png/500px-Trapezoid_bone_%28left_hand%29_01_palmar_view.png"],
+        ["capitate", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Capitate_bone_%28left_hand%29_01_palmar_view.png/500px-Capitate_bone_%28left_hand%29_01_palmar_view.png"],
+        ["hamate", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hamate_bone_%28left_hand%29_01_palmar_view.png/500px-Hamate_bone_%28left_hand%29_01_palmar_view.png"],
+        ["metacarpal", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Metacarpal_bones_%28left_hand%29_01_palmar_view_with_label.png/500px-Metacarpal_bones_%28left_hand%29_01_palmar_view_with_label.png"],
+        ["proximal phalanges", "https://www.kenhub.com/thumbor/ueqKu9Ine5WSfuIK-ECzxm70lu8=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/article/en/the-phalanges/kzbEzXn2fG1fk4abE0Tzhw_Proximal_phalanges.png"],
+        ["intermediate phalanges", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Intermediate_phalanges_of_the_hand_%28left_hand%29_02_dorsal_view.png/800px-Intermediate_phalanges_of_the_hand_%28left_hand%29_02_dorsal_view.png"],
+        ["distal phalanges", "https://upload.wikimedia.org/wikipedia/commons/9/95/Distal_phalanges_of_the_hand_%28left_hand%29_02_dorsal_view.png"],
+          
+]);
+    
+armBoneArr = ["clavicles", "scapula", "humerus", "radius", "ulna", "scaphoid", "lunate", "triquetrum", "pisiform", "trapezium", "trapezoid", "capitate", "hamate", "metacarpal", "proximal phalanges", "intermediate phalanges", "distal phalanges"];
+    
+var armBoneArr
+function testArms()
+{
+    qpage(16,armBoneArr, armBones);
+}
+
+var num;
+var im;
+var ans2 = new Rectangle(190,50);
+var anstxt = new Text("answer", "15pt ChalkDuster");
+var userinp;
+function qpage(nume, arr, map){
+    num = Randomizer.nextInt(0, nume);
+    
+    im = new WebImage(map.get(arr[num]));
+    im.setSize(160,230);
+    im.setPosition(getWidth()/2-im.getWidth()/2, 100)
+    add(im);
+    
+    var ask = new Text("What bone is this?", "20pt ChalkDuster");
+    ask.setPosition(getWidth()/2-ask.getWidth()/2, 50);
+    add(ask);
+    
+    var ans = new Rectangle(200, 60);
+    ans.setPosition(getWidth()/2-what.getWidth()/2, 370);
+    add(ans);
+    ans2.setPosition(getWidth()/2-what2.getWidth()/2,375);
+    ans2.setColor("#EAFAFF");
+    add(ans2);
+    anstxt.setPosition(getWidth()/2-anstxt.getWidth()/2,405);
+    add(anstxt);
+    
+    function userans(e){
+        var elem = getElementAt(e.getX(), e.getY());
+
+        if ((elem != null) && ((elem == ans2)) || (elem == anstxt)) {
+            userinp = readLine("Type in your answer: ");
+            check(arr, userinp, num, nume, map);
+        }
+    }
+    
+    mouseClickMethod(userans);
+}
+
+function check(arr, response, number, nume, map){
+    if (arr[number] == response){
+        removeAll();
+        backcolor();
+        youGotRight();
+    }
+    else{
+        removeAll();
+        backcolor();
+        youGotWrong(arr, number);
+    }
+    
+    function userpick(e){
+        var elem = getElementAt(e.getX(), e.getY());
+    
+        if ((elem != null) && ((elem == back)) || (elem == backtxt)) {
+            removeAll();
+            testPage();
+        }
+        if ((elem != null) && ((elem == next)) || (elem == nextxt)) {
+            removeAll();
+            backcolor();
+            qpage(nume, arr, map);
+        }
+    }
+    
+    backbutton();
+    nextButton();
+    mouseClickMethod(userpick);
+}
+
+var legBones = new Map([
+        ["femur", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Femur_-_anterior_view2.png/480px-Femur_-_anterior_view2.png"],
+        ["patella", "https://www.kenhub.com/thumbor/PA7VRaWsns1GKNHDBGZkA7cTPlQ=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/article/en/patella/ex23DqJf4jIwYC84lnkKA_ssCW1ZC0OK3HY0uiT407Q_Patella_01.png"],
+        ["tibia", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tibia_-_frontal_view.png/480px-Tibia_-_frontal_view.png"],
+        ["fibula", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fibula_-_anterior_view.png/480px-Fibula_-_anterior_view.png"],
+        ["calcaneus", "https://www.protalus.com/cdn/shop/articles/foot-diagram_700x.jpg?v=1592955728"],
+        ["talus", "https://www.kenhub.com/thumbor/uwIDH8ZQvLoF9oiyxfgj-TBzYMY=/fit-in/413x413/filters:fill(FFFFFF,true):watermark(/images/watermark_only_sm.png,0,0,0):watermark(/images/logo_url_sm.png,-10,-10,0):format(jpeg)/images/anatomy_term/talus-4/dLlbvqY3aqQNsUH5aH0Ig_talus.png"],
+        ["navicular", "https://www.kenhub.com/thumbor/IEsPH_gMLvPFStBPsZbv0tlHHfM=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/library/2937/wTyfEpOTcIDO6SUq9EHZ8w_7PvDHjypeS_Os_naviculare_2.png"],
+        ["cuneiform", "https://www.kenhub.com/thumbor/iaBoi-bckyA2AGgTDQWfCczwbUk=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/library/4317/o0xVc0SmzY0N3wQDbjZFg_PW9GkkMBqD_Os_cuneiforme_mediale_1.png"],
+        ["cuboid", "https://www.kenhub.com/thumbor/WkHfVFgpWuTmf2Veh2SVe5pHlnA=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/library/3512/QdS9AmXqJKPHmVkJ2eRQ_4EpGFcwRxr_Os_cuboideum_2.png"],
+        ["metatarsal", "data:image/jpeg;base64,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"],
+        ["proximal phalanges", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ISROHDsOMSVmluuULlMmncxXaQE2F3yGyA&usqp=CAU"],
+        ["intermediate phalanges", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEoL6Ehzli97oUVZbNkgE_EOCe2UEY2Zo5jA&usqp=CAU"],
+        ["distal phalanges", "data:image/jpeg;base64,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"]
+    ]);
+    var legBonesArr = ["femur", "patella", "tibia", "fibula", "calcaneus", "talus", "navicular", "cuneiform", "cuboid", "metatarsal", "proximal phalanges", "intermediate phalanges", "distal phalanges"];
+function testLegs()
+{
+    
+    qpage(13,legBonesArr, legBones);
+}
+
+var torsoBones = new Map([
+        ["ilium", "https://upload.wikimedia.org/wikipedia/commons/3/36/Ilium_03_anterior_view.png"],
+        ["ischium", "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ischium_02_anterior_view.png"],
+        ["pubis", "https://upload.wikimedia.org/wikipedia/commons/5/57/Pubis_02_anterior_view.png"],
+        ["sacrum", "https://upload.wikimedia.org/wikipedia/commons/a/a4/Sacrum_-_anterior_view00.png"],
+        ["coccyx", "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coccyx_-_anterior_view04.png"],
+        ["sternum", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Sternum_above2.png/800px-Sternum_above2.png"],
+        ["ribs", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Balinese_Roasted_Pork_Ribs_-_Iga_Babi_Panggang_Bali.JPG/640px-Balinese_Roasted_Pork_Ribs_-_Iga_Babi_Panggang_Bali.JPG"],
+        ["cervical vertebrae", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Cervical_vertebrae_lateral2.png/1200px-Cervical_vertebrae_lateral2.png"],
+        ["thoracic vertebrae", "https://upload.wikimedia.org/wikipedia/commons/f/fd/Thoracic_vertebrae_back2.png"],
+        ["lumbar vertebrae", "https://upload.wikimedia.org/wikipedia/commons/5/53/Lumbar_vertebrae_anterior.png"],
+        
+    ])
+    var torsoBonesArr = ["ilium", "ischium","pubis", "sacrum", "coccyx", "sternum", "ribs", "cervical vertebrae", "thoracic vertebrae", "lumbar vertebrae"];
+function testTorso(){
+    qpage(9,torsoBonesArr, torsoBones);
+}
+
+var headBones = new Map([
+        ["frontal", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Frontal_bone_lateral3.png/480px-Frontal_bone_lateral3.png"],
+        ["parietal", "https://www.kenhub.com/thumbor/bQP63rjXYTGAvV06yDjRqDNqjYM=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/article/en/the-parietal-bone/HnTYr2LCEDwW1SRBnNTH3g_cAgUkS8JcGQYF0JKSph2A_Parietal_bone_02.png"],
+        ["temporal", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Temporal_bone_lateral5.png/480px-Temporal_bone_lateral5.png"],
+        ["occipital", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Occipital_bone_lateral4.png/480px-Occipital_bone_lateral4.png"],
+        ["sphenoid", "https://www.kenhub.com/thumbor/LimQuBGO8GCnVkp-VB1JMUrenAE=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/article/en/the-sphenoid-bone/aARNEv8OiIILcs9lvpK7vg_6NdjcuJxDdIdzYrUOl13Dw_Os_spenoidale_01.png"],
+        ["nasal", "https://www.kenhub.com/thumbor/55gV_y4YwiVfhuPWG251HsRT-l8=/fit-in/413x413/filters:fill(FFFFFF,true):watermark(/images/watermark_only_sm.png,0,0,0):watermark(/images/logo_url_sm.png,-10,-10,0):format(jpeg)/images/anatomy_term/os-nasale/OmaJIUWgPVzNglYGJjwpQ_Nasal_bone_01.png"],
+        ["maxilla", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Maxilla_anterior.png/800px-Maxilla_anterior.png"],
+        ["zygomatic", "https://www.kenhub.com/thumbor/qRw1oZWu8CSe--9rYVOd6Tq3t1A=/fit-in/413x413/filters:fill(FFFFFF,true):watermark(/images/watermark_only_sm.png,0,0,0):watermark(/images/logo_url_sm.png,-10,-10,0):format(jpeg)/images/anatomy_term/os-zygomaticum/yrfk3WxLnkxdjmXszDycw_Zygomatic_bone_01.png"],
+        ["palatine", "https://www.kenhub.com/thumbor/-cKbBoVwwU7plIZq8sVL_5SH5_4=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/article/en/the-palatine-bone/okDjBcEgUtYM4FLLwfVk9A_os_palatinum_2_atlas_ckWoaG39xMrn13UiuUqOWg.png"],
+        ["lacrimal", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Lacrimal_bone_-_lateral_view6.png/480px-Lacrimal_bone_-_lateral_view6.png"],
+        ["inferior nasal conchae", "data:image/jpeg;base64,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"],
+        ["vomer", "https://www.kenhub.com/thumbor/7ngpHwTskr35hOStUw1jA0wvNQo=/fit-in/413x413/filters:fill(FFFFFF,true):watermark(/images/watermark_only_sm.png,0,0,0):watermark(/images/logo_url_sm.png,-10,-10,0):format(jpeg)/images/anatomy_term/vomer-2/4MzTcl9LYaGClUwDmQQ_Vomer_01.png"],
+        ["mandible", "data:image/jpeg;base64,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"],
+        ["hyoid", "data:image/jpeg;base64,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"],
+        ["malleus", "https://www.kenhub.com/thumbor/sgQ3JguF1m5Kq5Ixw9JLe05qsL4=/fit-in/413x413/filters:fill(FFFFFF,true):watermark(/images/watermark_only_sm.png,0,0,0):watermark(/images/logo_url_sm.png,-10,-10,0):format(jpeg)/images/anatomy_term/vestibule-of-the-ear/gey9LfWlS0fW5mtOaol9jA_Vestibulum_02.png"],
+        ["incus", "https://www.kenhub.com/thumbor/xJIUQRFaNAoqkIV9wUGl-mYuuXo=/fit-in/413x413/filters:fill(FFFFFF,true):watermark(/images/watermark_only_sm.png,0,0,0):watermark(/images/logo_url_sm.png,-10,-10,0):format(jpeg)/images/anatomy_term/utriculus/fuKz6zxAHLrIGvPdFDxnrg_Utriculus_01.png"],
+    ])
+    var headBonesArr = ["frontal", "parietal", "temporal", "occipital", "sphenoid", "nasal", "maxilla", "zygomatic", "palatine", "lacrimal", "inferior nasal conchae", "vomer", "mandible", "hyoid", "malleus", "incus"];
+function testHead(){
+    qpage(15, headBonesArr, headBones);
+}
+
+function bonesAnswerHands(e) {
+    var elem = getElementAt(e.getX(), e.getY());
+
+    if ((elem != null) && ((elem == answerBox)) || (elem == answerBoxTxt)) {
+        var answer = readLine("What bone is this? ");
+        var check = checkResponse(armBonesArr, answer, num);
+    }
+}
+
+function youGotRight(){
+    var wrdYou = new Text("You", "40pt ChalkDuster");
+    wrdYou.setPosition(getWidth()/2-wrdYou.getWidth()/2, 100)
+    add(wrdYou);
+    
+    var wrdGotIt = new Text("Got It", "40pt ChalkDuster");
+    wrdGotIt.setPosition(getWidth()/2-wrdGotIt.getWidth()/2, 160)
+    add(wrdGotIt);
+    
+    var wrdRight = new Text("Right!!!", "40pt ChalkDuster");
+    wrdRight.setPosition(getWidth()/2-wrdRight.getWidth()/2, 220)
+    add(wrdRight);
+    
+    var wrdSmile = new Text(":)", "40pt ChalkDuster");
+    wrdSmile.setPosition(getWidth()/2-wrdSmile.getWidth()/2, 300)
+    add(wrdSmile);
+}
+
+function youGotWrong(arr, number){
+    var wrdYou = new Text("You", "40pt ChalkDuster");
+    wrdYou.setPosition(getWidth()/2-wrdYou.getWidth()/2, 100)
+    add(wrdYou);
+    
+    var wrdGotIt = new Text("Got It", "40pt ChalkDuster");
+    wrdGotIt.setPosition(getWidth()/2-wrdGotIt.getWidth()/2, 160)
+    add(wrdGotIt);
+    
+    var wrdRight = new Text("Wrong!!!", "40pt ChalkDuster");
+    wrdRight.setPosition(getWidth()/2-wrdRight.getWidth()/2, 220)
+    add(wrdRight);
+    
+    var wrdSmile = new Text(":(", "40pt ChalkDuster");
+    wrdSmile.setPosition(getWidth()/2-wrdSmile.getWidth()/2, 300)
+    add(wrdSmile);
+    
+    var correctans = new Text("The correct answer was " + arr[number] + ".", "10pt ChalkDuster");
+    correctans.setPosition(getWidth()/2-correctans.getWidth()/2, 350);
+    add(correctans);
+}
